@@ -1,8 +1,8 @@
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"], {
   /***/
@@ -69,21 +69,50 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _recipes_recipes_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _recipes_recipes_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./recipes/recipes.component */
     "./src/app/recipes/recipes.component.ts");
     /* harmony import */
 
 
-    var _shopping_list_shopping_list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _shopping_list_shopping_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./shopping-list/shopping-list.component */
     "./src/app/shopping-list/shopping-list.component.ts");
 
-    var AppComponent = function AppComponent() {
-      _classCallCheck(this, AppComponent);
+    function AppComponent_app_recipes_4_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-recipes");
+      }
+    }
 
-      this.title = 'Recipe-ShoppingList-App';
-    };
+    function AppComponent_app_shopping_list_5_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-shopping-list");
+      }
+    }
+
+    var AppComponent = /*#__PURE__*/function () {
+      function AppComponent() {
+        _classCallCheck(this, AppComponent);
+
+        this.loadedFeature = 'recipe';
+      }
+
+      _createClass(AppComponent, [{
+        key: "onNavigate",
+        value: function onNavigate(feature) {
+          this.loadedFeature = feature;
+        }
+      }]);
+
+      return AppComponent;
+    }();
 
     AppComponent.ɵfac = function AppComponent_Factory(t) {
       return new (t || AppComponent)();
@@ -93,21 +122,27 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       type: AppComponent,
       selectors: [["app-root"]],
       decls: 6,
-      vars: 0,
-      consts: [[1, "container"], [1, "row"], [1, "col-md-12"]],
+      vars: 2,
+      consts: [[3, "featureSelected"], [1, "container"], [1, "row"], [1, "col-md-12"], [4, "ngIf"]],
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-header");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "app-header", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("featureSelected", function AppComponent_Template_app_header_featureSelected_0_listener($event) {
+            return ctx.onNavigate($event);
+          });
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "app-recipes");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "app-shopping-list");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, AppComponent_app_recipes_4_Template, 1, 0, "app-recipes", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, AppComponent_app_shopping_list_5_Template, 1, 0, "app-shopping-list", 4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -115,8 +150,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.loadedFeature === "recipe");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.loadedFeature !== "recipe");
+        }
       },
-      directives: [_header_header_component__WEBPACK_IMPORTED_MODULE_1__["HeaderComponent"], _recipes_recipes_component__WEBPACK_IMPORTED_MODULE_2__["RecipesComponent"], _shopping_list_shopping_list_component__WEBPACK_IMPORTED_MODULE_3__["ShoppingListComponent"]],
+      directives: [_header_header_component__WEBPACK_IMPORTED_MODULE_1__["HeaderComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _recipes_recipes_component__WEBPACK_IMPORTED_MODULE_3__["RecipesComponent"], _shopping_list_shopping_list_component__WEBPACK_IMPORTED_MODULE_4__["ShoppingListComponent"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"]
     });
     /*@__PURE__*/
@@ -169,49 +214,55 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./app.component */
     "./src/app/app.component.ts");
     /* harmony import */
 
 
-    var _header_header_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _header_header_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./header/header.component */
     "./src/app/header/header.component.ts");
     /* harmony import */
 
 
-    var _recipes_recipes_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _recipes_recipes_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./recipes/recipes.component */
     "./src/app/recipes/recipes.component.ts");
     /* harmony import */
 
 
-    var _recipes_recipe_list_recipe_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _recipes_recipe_list_recipe_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ./recipes/recipe-list/recipe-list.component */
     "./src/app/recipes/recipe-list/recipe-list.component.ts");
     /* harmony import */
 
 
-    var _recipes_recipe_detail_recipe_detail_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _recipes_recipe_detail_recipe_detail_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ./recipes/recipe-detail/recipe-detail.component */
     "./src/app/recipes/recipe-detail/recipe-detail.component.ts");
     /* harmony import */
 
 
-    var _recipes_recipe_detail_recipe_item_recipe_item_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _recipes_recipe_detail_recipe_item_recipe_item_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
     /*! ./recipes/recipe-detail/recipe-item/recipe-item.component */
     "./src/app/recipes/recipe-detail/recipe-item/recipe-item.component.ts");
     /* harmony import */
 
 
-    var _shopping_list_shopping_list_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _shopping_list_shopping_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! ./shopping-list/shopping-list.component */
     "./src/app/shopping-list/shopping-list.component.ts");
     /* harmony import */
 
 
-    var _shopping_list_shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
+    var _shopping_list_shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
     /*! ./shopping-list/shopping-edit/shopping-edit.component */
     "./src/app/shopping-list/shopping-edit/shopping-edit.component.ts");
 
@@ -221,20 +272,20 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({
       type: AppModule,
-      bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
+      bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
     });
     AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({
       factory: function AppModule_Factory(t) {
         return new (t || AppModule)();
       },
       providers: [],
-      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"]]]
+      imports: [[_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"]]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_3__["HeaderComponent"], _recipes_recipes_component__WEBPACK_IMPORTED_MODULE_4__["RecipesComponent"], _recipes_recipe_list_recipe_list_component__WEBPACK_IMPORTED_MODULE_5__["RecipeListComponent"], _recipes_recipe_detail_recipe_detail_component__WEBPACK_IMPORTED_MODULE_6__["RecipeDetailComponent"], _recipes_recipe_detail_recipe_item_recipe_item_component__WEBPACK_IMPORTED_MODULE_7__["RecipeItemComponent"], _shopping_list_shopping_list_component__WEBPACK_IMPORTED_MODULE_8__["ShoppingListComponent"], _shopping_list_shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_9__["ShoppingEditComponent"]],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"]]
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_4__["HeaderComponent"], _recipes_recipes_component__WEBPACK_IMPORTED_MODULE_5__["RecipesComponent"], _recipes_recipe_list_recipe_list_component__WEBPACK_IMPORTED_MODULE_6__["RecipeListComponent"], _recipes_recipe_detail_recipe_detail_component__WEBPACK_IMPORTED_MODULE_7__["RecipeDetailComponent"], _recipes_recipe_detail_recipe_item_recipe_item_component__WEBPACK_IMPORTED_MODULE_8__["RecipeItemComponent"], _shopping_list_shopping_list_component__WEBPACK_IMPORTED_MODULE_9__["ShoppingListComponent"], _shopping_list_shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_10__["ShoppingEditComponent"]],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"]]
       });
     })();
     /*@__PURE__*/
@@ -244,10 +295,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_3__["HeaderComponent"], _recipes_recipes_component__WEBPACK_IMPORTED_MODULE_4__["RecipesComponent"], _recipes_recipe_list_recipe_list_component__WEBPACK_IMPORTED_MODULE_5__["RecipeListComponent"], _recipes_recipe_detail_recipe_detail_component__WEBPACK_IMPORTED_MODULE_6__["RecipeDetailComponent"], _recipes_recipe_detail_recipe_item_recipe_item_component__WEBPACK_IMPORTED_MODULE_7__["RecipeItemComponent"], _shopping_list_shopping_list_component__WEBPACK_IMPORTED_MODULE_8__["ShoppingListComponent"], _shopping_list_shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_9__["ShoppingEditComponent"]],
-          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"]],
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_4__["HeaderComponent"], _recipes_recipes_component__WEBPACK_IMPORTED_MODULE_5__["RecipesComponent"], _recipes_recipe_list_recipe_list_component__WEBPACK_IMPORTED_MODULE_6__["RecipeListComponent"], _recipes_recipe_detail_recipe_detail_component__WEBPACK_IMPORTED_MODULE_7__["RecipeDetailComponent"], _recipes_recipe_detail_recipe_item_recipe_item_component__WEBPACK_IMPORTED_MODULE_8__["RecipeItemComponent"], _shopping_list_shopping_list_component__WEBPACK_IMPORTED_MODULE_9__["ShoppingListComponent"], _shopping_list_shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_10__["ShoppingEditComponent"]],
+          imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"]],
           providers: [],
-          bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
+          bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         }]
       }], null, null);
     })();
@@ -280,10 +331,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
 
-    var HeaderComponent = function HeaderComponent() {
-      _classCallCheck(this, HeaderComponent);
-    };
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+
+    var HeaderComponent = /*#__PURE__*/function () {
+      function HeaderComponent() {
+        _classCallCheck(this, HeaderComponent);
+
+        this.featureSelected = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+      }
+
+      _createClass(HeaderComponent, [{
+        key: "onSelect",
+        value: function onSelect(feature) {
+          this.featureSelected.emit(feature);
+        }
+      }]);
+
+      return HeaderComponent;
+    }();
 
     HeaderComponent.ɵfac = function HeaderComponent_Factory(t) {
       return new (t || HeaderComponent)();
@@ -292,9 +362,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: HeaderComponent,
       selectors: [["app-header"]],
+      outputs: {
+        featureSelected: "featureSelected"
+      },
       decls: 35,
       vars: 0,
-      consts: [["role", "navigation", 1, "navbar", "navbar-default"], [1, "navbar-header"], ["type", "button", "data-toggle", "collapse", "data-target", ".navbar-ex1-collapse", 1, "navbar-toggle"], [1, "sr-only"], [1, "icon-bar"], ["href", "#", 1, "navbar-brand"], [1, "collapse", "navbar-collapse", "navbar-ex1-collapse"], [1, "nav", "navbar-nav"], [1, "active"], ["href", "#"], ["role", "search", 1, "navbar-form", "navbar-left"], [1, "form-group"], ["type", "text", "placeholder", "Search", 1, "form-control"], ["type", "submit", 1, "btn", "btn-default"], [1, "nav", "navbar-nav", "navbar-right"], [1, "dropdown"], ["href", "#", "data-toggle", "dropdown", 1, "dropdown-toggle"], [1, "caret"], [1, "dropdown-menu"]],
+      consts: [["role", "navigation", 1, "navbar", "navbar-default"], [1, "navbar-header"], ["type", "button", "data-toggle", "collapse", "data-target", ".navbar-ex1-collapse", 1, "navbar-toggle"], [1, "sr-only"], [1, "icon-bar"], ["href", "#", 1, "navbar-brand"], [1, "collapse", "navbar-collapse", "navbar-ex1-collapse"], [1, "nav", "navbar-nav"], [1, "active"], ["href", "#", 3, "click"], ["role", "search", 1, "navbar-form", "navbar-left"], [1, "form-group"], ["type", "text", "placeholder", "Search", 1, "form-control"], ["type", "submit", 1, "btn", "btn-default"], [1, "nav", "navbar-nav", "navbar-right"], [1, "dropdown"], ["href", "#", "data-toggle", "dropdown", 1, "dropdown-toggle"], [1, "caret"], [1, "dropdown-menu"], ["href", "#"]],
       template: function HeaderComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "nav", 0);
@@ -333,6 +406,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "a", 9);
 
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_a_click_13_listener() {
+            return ctx.onSelect("recipe");
+          });
+
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Recipes");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -342,6 +419,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "li");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "a", 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function HeaderComponent_Template_a_click_16_listener() {
+            return ctx.onSelect("shopping-list");
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "Shopping List");
 
@@ -383,7 +464,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](29, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "a", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](30, "a", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](31, "Save Data");
 
@@ -393,7 +474,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](32, "li");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "a", 9);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](33, "a", 19);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](34, "Fetch Data");
 
@@ -412,6 +493,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       },
+      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgForm"]],
       encapsulation: 2
     });
     /*@__PURE__*/
@@ -423,7 +505,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           selector: 'app-header',
           templateUrl: './header.component.html'
         }]
-      }], null, null);
+      }], null, {
+        featureSelected: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }]
+      });
     })();
     /***/
 
@@ -475,9 +561,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     RecipeDetailComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: RecipeDetailComponent,
       selectors: [["app-recipe-detail"]],
+      inputs: {
+        recipe: "recipe"
+      },
       decls: 29,
-      vars: 0,
-      consts: [[1, "row"], [1, "col-xs-12", "col-sm-12", "col-md-12", "col-lg-12"], ["src", "", "alt", "", 1, "img-responsive"], [1, "btn-group"], ["type", "button", 1, "btn", "btn-primary", "dropdown-toggle"], [1, "caret"], [1, "dropdown-menu"], ["href", "#"]],
+      vars: 4,
+      consts: [[1, "row"], [1, "col-xs-12", "col-sm-12", "col-md-12", "col-lg-12"], [1, "img-responsive", 2, "max-height", "500px", 3, "src", "alt"], [1, "btn-group"], ["type", "button", 1, "btn", "btn-primary", "dropdown-toggle"], [1, "caret"], [1, "dropdown-menu"], ["href", "#"]],
       template: function RecipeDetailComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -496,7 +585,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "h1");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Recipe Name");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -562,7 +651,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](24, "div", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25, " Description ");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](25);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -577,6 +666,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("alt", ctx.recipe.name);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx.recipe.imagePath, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.recipe.name);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](19);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.recipe.description, " ");
         }
       },
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JlY2lwZXMvcmVjaXBlLWRldGFpbC9yZWNpcGUtZGV0YWlsLmNvbXBvbmVudC5jc3MifQ== */"]
@@ -593,7 +698,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }]
       }], function () {
         return [];
-      }, null);
+      }, {
+        recipe: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }]
+      });
     })();
     /***/
 
@@ -628,11 +737,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var RecipeItemComponent = /*#__PURE__*/function () {
       function RecipeItemComponent() {
         _classCallCheck(this, RecipeItemComponent);
+
+        this.recipeSelected = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
       }
 
       _createClass(RecipeItemComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "onSelected",
+        value: function onSelected() {
+          this.recipeSelected.emit();
+        }
       }]);
 
       return RecipeItemComponent;
@@ -645,15 +761,62 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     RecipeItemComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: RecipeItemComponent,
       selectors: [["app-recipe-item"]],
-      decls: 2,
-      vars: 0,
+      inputs: {
+        recipe: "recipe"
+      },
+      outputs: {
+        recipeSelected: "recipeSelected"
+      },
+      decls: 8,
+      vars: 4,
+      consts: [["href", "#", 1, "list-group-item", "clearfix", 3, "click"], [1, "pull-left"], [1, "list-group-item-heading"], [1, "list-group-item-text"], [1, "pull-right"], [1, "img-responsive", 2, "max-height", "100px", 3, "src", "alt"]],
       template: function RecipeItemComponent_Template(rf, ctx) {
         if (rf & 1) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "recipe-item works!");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function RecipeItemComponent_Template_a_click_0_listener() {
+            return ctx.onSelected();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "h4", 2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "span", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "img", 5);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        }
+
+        if (rf & 2) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.recipe.name);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.recipe.description);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("alt", ctx.recipe.name);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx.recipe.imagePath, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
         }
       },
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JlY2lwZXMvcmVjaXBlLWRldGFpbC9yZWNpcGUtaXRlbS9yZWNpcGUtaXRlbS5jb21wb25lbnQuY3NzIn0= */"]
@@ -670,7 +833,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }]
       }], function () {
         return [];
-      }, null);
+      }, {
+        recipe: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }],
+        recipeSelected: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }]
+      });
     })();
     /***/
 
@@ -720,51 +890,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ../recipe-detail/recipe-item/recipe-item.component */
     "./src/app/recipes/recipe-detail/recipe-item/recipe-item.component.ts");
 
-    function RecipeListComponent_a_7_Template(rf, ctx) {
+    function RecipeListComponent_app_recipe_item_7_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 4);
+        var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "app-recipe-item", 4);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "h4", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("recipeSelected", function RecipeListComponent_app_recipe_item_7_Template_app_recipe_item_recipeSelected_0_listener() {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
+          var recipeElement_r1 = ctx.$implicit;
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p", 7);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "span", 8);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "img", 9);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          return ctx_r2.onRecipeSelected(recipeElement_r1);
+        });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var recipe_r1 = ctx.$implicit;
+        var recipeElement_r1 = ctx.$implicit;
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](recipe_r1.name);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](recipe_r1.description);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("alt", recipe_r1.name);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", recipe_r1.imagePath, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("recipe", recipeElement_r1);
       }
     }
 
@@ -772,12 +920,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       function RecipeListComponent() {
         _classCallCheck(this, RecipeListComponent);
 
-        this.recipes = [new _recipe_model__WEBPACK_IMPORTED_MODULE_1__["Recipe"]('Sourdough Bread', 'Known for its characteristic flavor ranging from mild to strong, chewy texture, and crisp crust.', '../../../assets/images/Sourdough_Bread.jpg')];
+        this.recipeWasSelected = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.recipes = [new _recipe_model__WEBPACK_IMPORTED_MODULE_1__["Recipe"]('Sourdough Bread', 'Known for its characteristic flavor ranging from mild to strong, chewy texture, and crisp crust.', '../../../assets/images/Sourdough_Bread.jpg'), new _recipe_model__WEBPACK_IMPORTED_MODULE_1__["Recipe"]('Sourdough Cinnamon Rolls', 'Delicious Sourdough Cinnamon Buns soft,buttery buns with cinnamon sugar glazed with cream cheese glaze great breakfast treat any day.', '../../../assets/images/Sourdough-Cinnamon-Buns.jpg')];
       }
 
       _createClass(RecipeListComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "onRecipeSelected",
+        value: function onRecipeSelected(recipe) {
+          this.recipeWasSelected.emit(recipe);
+        }
       }]);
 
       return RecipeListComponent;
@@ -790,9 +944,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     RecipeListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: RecipeListComponent,
       selectors: [["app-recipe-list"]],
-      decls: 9,
+      outputs: {
+        recipeWasSelected: "recipeWasSelected"
+      },
+      decls: 8,
       vars: 1,
-      consts: [[1, "row"], [1, "col-xs-12", "col-sm-12", "col-md-12", "col-lg-12"], [1, "btn", "btn-success"], ["href", "#", "class", "list-group-item clearfix", 4, "ngFor", "ngForOf"], ["href", "#", 1, "list-group-item", "clearfix"], [1, "pull-left"], [1, "list-group-item-heading"], [1, "list-group-item-text"], [1, "pull-right"], [1, "img-responsive", 2, "max-height", "100px", 3, "src", "alt"]],
+      consts: [[1, "row"], [1, "col-xs-12", "col-sm-12", "col-md-12", "col-lg-12"], [1, "btn", "btn-success"], ["class", "recipeListItem", 3, "recipe", "recipeSelected", 4, "ngFor", "ngForOf"], [1, "recipeListItem", 3, "recipe", "recipeSelected"]],
       template: function RecipeListComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -815,9 +972,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, RecipeListComponent_a_7_Template, 8, 4, "a", 3);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "app-recipe-item");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, RecipeListComponent_app_recipe_item_7_Template, 1, 1, "app-recipe-item", 3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -831,7 +986,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       },
       directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], _recipe_detail_recipe_item_recipe_item_component__WEBPACK_IMPORTED_MODULE_3__["RecipeItemComponent"]],
-      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JlY2lwZXMvcmVjaXBlLWxpc3QvcmVjaXBlLWxpc3QuY29tcG9uZW50LmNzcyJ9 */"]
+      styles: [".recipeListItem[_ngcontent-%COMP%] {\n  margin: 1px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcmVjaXBlcy9yZWNpcGUtbGlzdC9yZWNpcGUtbGlzdC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBVztBQUNiIiwiZmlsZSI6InNyYy9hcHAvcmVjaXBlcy9yZWNpcGUtbGlzdC9yZWNpcGUtbGlzdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnJlY2lwZUxpc3RJdGVtIHtcbiAgbWFyZ2luOiAxcHg7XG59XG4iXX0= */"]
     });
     /*@__PURE__*/
 
@@ -845,7 +1000,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }]
       }], function () {
         return [];
-      }, null);
+      }, {
+        recipeWasSelected: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }]
+      });
     })();
     /***/
 
@@ -916,9 +1075,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _recipe_detail_recipe_detail_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _recipe_detail_recipe_detail_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./recipe-detail/recipe-detail.component */
     "./src/app/recipes/recipe-detail/recipe-detail.component.ts");
+
+    function RecipesComponent_app_recipe_detail_4_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-recipe-detail", 6);
+      }
+
+      if (rf & 2) {
+        var ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("recipe", ctx_r0.selectedRecipe);
+      }
+    }
+
+    function RecipesComponent_ng_template_5_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Please select a Recipe!");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+      }
+    }
 
     var RecipesComponent = /*#__PURE__*/function () {
       function RecipesComponent() {
@@ -940,29 +1127,45 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     RecipesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: RecipesComponent,
       selectors: [["app-recipes"]],
-      decls: 5,
-      vars: 0,
-      consts: [[1, "row"], [1, "col-md-5"], [1, "col-md-7"]],
+      decls: 7,
+      vars: 2,
+      consts: [[1, "row"], [1, "col-md-5"], [3, "recipeWasSelected"], [1, "col-md-7"], [3, "recipe", 4, "ngIf", "ngIfElse"], ["infoText", ""], [3, "recipe"]],
       template: function RecipesComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "app-recipe-list");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "app-recipe-list", 2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("recipeWasSelected", function RecipesComponent_Template_app_recipe_list_recipeWasSelected_2_listener($event) {
+            return ctx.selectedRecipe = $event;
+          });
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "app-recipe-detail");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 3);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, RecipesComponent_app_recipe_detail_4_Template, 1, 1, "app-recipe-detail", 4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, RecipesComponent_ng_template_5_Template, 2, 0, "ng-template", null, 5, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
+
+        if (rf & 2) {
+          var _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](6);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.selectedRecipe)("ngIfElse", _r1);
+        }
       },
-      directives: [_recipe_list_recipe_list_component__WEBPACK_IMPORTED_MODULE_1__["RecipeListComponent"], _recipe_detail_recipe_detail_component__WEBPACK_IMPORTED_MODULE_2__["RecipeDetailComponent"]],
+      directives: [_recipe_list_recipe_list_component__WEBPACK_IMPORTED_MODULE_1__["RecipeListComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], _recipe_detail_recipe_detail_component__WEBPACK_IMPORTED_MODULE_3__["RecipeDetailComponent"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JlY2lwZXMvcmVjaXBlcy5jb21wb25lbnQuY3NzIn0= */"]
     });
     /*@__PURE__*/
@@ -1038,15 +1241,40 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var src_app_shared_models_ingredient_model__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! src/app/shared/models/ingredient.model */
+    "./src/app/shared/models/ingredient.model.ts");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+
+    var _c0 = ["nameInput"];
+    var _c1 = ["amountInput"];
 
     var ShoppingEditComponent = /*#__PURE__*/function () {
       function ShoppingEditComponent() {
         _classCallCheck(this, ShoppingEditComponent);
+
+        this.ingredientAdded = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
       }
 
       _createClass(ShoppingEditComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "onAddItem",
+        value: function onAddItem() {
+          var ingredientName = this.nameInputRef.nativeElement.value;
+          var ingredientAmount = this.amountInputRef.nativeElement.value;
+          var newIngredient = new src_app_shared_models_ingredient_model__WEBPACK_IMPORTED_MODULE_1__["Ingredient"](ingredientName, ingredientAmount);
+          this.ingredientAdded.emit(newIngredient);
+        }
       }]);
 
       return ShoppingEditComponent;
@@ -1059,9 +1287,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     ShoppingEditComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: ShoppingEditComponent,
       selectors: [["app-shopping-edit"]],
-      decls: 12,
+      viewQuery: function ShoppingEditComponent_Query(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, true);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c1, true);
+        }
+
+        if (rf & 2) {
+          var _t;
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.nameInputRef = _t.first);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.amountInputRef = _t.first);
+        }
+      },
+      outputs: {
+        ingredientAdded: "ingredientAdded"
+      },
+      decls: 22,
       vars: 0,
-      consts: [[1, "row"], [1, "col-xs-12", "col-sm-12", "col-md-12", "col-lg-12"], [1, "col-xs-5", "col-sm-5", "col-md-5", "col-lg-5", "form-group"], ["for", "name"], ["type", "text", "id", "name", 1, "form-control"], [1, "col-xs-2", "col-sm-2", "col-md-2", "col-lg-2", "form-group"], ["for", "amount"], ["type", "number", "id", "amount", 1, "form-control"]],
+      consts: [[1, "row"], [1, "col-xs-12", "col-sm-12", "col-md-12", "col-lg-12"], [1, "col-xs-5", "col-sm-5", "col-md-5", "col-lg-5", "form-group"], ["for", "name"], ["type", "text", "id", "name", 1, "form-control"], ["nameInput", ""], [1, "col-xs-2", "col-sm-2", "col-md-2", "col-lg-2", "form-group"], ["for", "amount"], ["type", "number", "id", "amount", 1, "form-control"], ["amountInput", ""], ["type", "submit", 1, "btn", "btn-success", 3, "click"], ["type", "submit", 1, "btn", "btn-danger"], ["type", "submit", 1, "btn", "btn-primary"]],
       template: function ShoppingEditComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -1080,19 +1325,49 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "input", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "input", 4, 5);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "div", 5);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "div", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "label", 6);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "label", 7);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Amount");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Amount");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](11, "input", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](12, "input", 8, 9);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 0);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "button", 10);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function ShoppingEditComponent_Template_button_click_16_listener() {
+            return ctx.onAddItem();
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, " Add ");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "button", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](19, "Delete");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](20, "button", 12);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](21, "Clear");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1105,6 +1380,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       },
+      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgForm"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Nob3BwaW5nLWxpc3Qvc2hvcHBpbmctZWRpdC9zaG9wcGluZy1lZGl0LmNvbXBvbmVudC5jc3MifQ== */"]
     });
     /*@__PURE__*/
@@ -1119,7 +1395,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }]
       }], function () {
         return [];
-      }, null);
+      }, {
+        nameInputRef: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+          args: ['nameInput', {
+            "static": false
+          }]
+        }],
+        amountInputRef: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
+          args: ['amountInput', {
+            "static": false
+          }]
+        }],
+        ingredientAdded: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
+        }]
+      });
     })();
     /***/
 
@@ -1171,7 +1463,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
     function ShoppingListComponent_a_5_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 5);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -1197,6 +1489,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(ShoppingListComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {}
+      }, {
+        key: "onIngredientAdded",
+        value: function onIngredientAdded(ingredient) {
+          this.ingredients.push(ingredient);
+        }
       }]);
 
       return ShoppingListComponent;
@@ -1211,20 +1508,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selectors: [["app-shopping-list"]],
       decls: 6,
       vars: 1,
-      consts: [[1, "row"], [1, "col-xs-10", "col-sm-10", "col-md-10", "col-lg-10"], [1, "list-group"], ["class", "list-group-item", "style", "cursor: pointer", 4, "ngFor", "ngForOf"], [1, "list-group-item", 2, "cursor", "pointer"]],
+      consts: [[1, "row"], [1, "col-xs-10", "col-sm-10", "col-md-10", "col-lg-10"], [3, "ingredientAdded"], [1, "list-group"], ["class", "list-group-item", "style", "cursor: pointer;", 4, "ngFor", "ngForOf"], [1, "list-group-item", 2, "cursor", "pointer"]],
       template: function ShoppingListComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "app-shopping-edit");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "app-shopping-edit", 2);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ingredientAdded", function ShoppingListComponent_Template_app_shopping_edit_ingredientAdded_2_listener($event) {
+            return ctx.onIngredientAdded($event);
+          });
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "hr");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "ul", 2);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "ul", 3);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, ShoppingListComponent_a_5_Template, 2, 2, "a", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, ShoppingListComponent_a_5_Template, 2, 2, "a", 4);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1358,7 +1661,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! F:\Recipe-ShoppingList-App\src\main.ts */
+    /*! P:\Code\Personal\Recipe-ShoppingList-App\src\main.ts */
     "./src/main.ts");
     /***/
   }
