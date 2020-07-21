@@ -1419,7 +1419,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _shopping_list_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../shopping-list.service */
+    "./src/app/shopping-list/shopping-list.service.ts");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/forms */
     "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
 
@@ -1427,10 +1433,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _c1 = ["amountInput"];
 
     var ShoppingEditComponent = /*#__PURE__*/function () {
-      function ShoppingEditComponent() {
+      function ShoppingEditComponent(shoppingListService) {
         _classCallCheck(this, ShoppingEditComponent);
 
-        this.ingredientAdded = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+        this.shoppingListService = shoppingListService;
       }
 
       _createClass(ShoppingEditComponent, [{
@@ -1442,7 +1448,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var ingredientName = this.nameInputRef.nativeElement.value;
           var ingredientAmount = this.amountInputRef.nativeElement.value;
           var newIngredient = new src_app_shared_models_ingredient_model__WEBPACK_IMPORTED_MODULE_1__["Ingredient"](ingredientName, ingredientAmount);
-          this.ingredientAdded.emit(newIngredient);
+          this.shoppingListService.addIngredient(newIngredient);
         }
       }]);
 
@@ -1450,7 +1456,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     ShoppingEditComponent.ɵfac = function ShoppingEditComponent_Factory(t) {
-      return new (t || ShoppingEditComponent)();
+      return new (t || ShoppingEditComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_shopping_list_service__WEBPACK_IMPORTED_MODULE_2__["ShoppingListService"]));
     };
 
     ShoppingEditComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -1469,9 +1475,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.nameInputRef = _t.first);
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵloadQuery"]()) && (ctx.amountInputRef = _t.first);
         }
-      },
-      outputs: {
-        ingredientAdded: "ingredientAdded"
       },
       decls: 22,
       vars: 0,
@@ -1549,7 +1552,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
       },
-      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgForm"]],
+      directives: [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["ɵangular_packages_forms_forms_y"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgControlStatusGroup"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NgForm"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Nob3BwaW5nLWxpc3Qvc2hvcHBpbmctZWRpdC9zaG9wcGluZy1lZGl0LmNvbXBvbmVudC5jc3MifQ== */"]
     });
     /*@__PURE__*/
@@ -1563,7 +1566,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           styleUrls: ['./shopping-edit.component.css']
         }]
       }], function () {
-        return [];
+        return [{
+          type: _shopping_list_service__WEBPACK_IMPORTED_MODULE_2__["ShoppingListService"]
+        }];
       }, {
         nameInputRef: [{
           type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
@@ -1576,9 +1581,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           args: ['amountInput', {
             "static": false
           }]
-        }],
-        ingredientAdded: [{
-          type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"]
         }]
       });
     })();
@@ -1620,19 +1622,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _shopping_list_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ./shopping-list.service */
+    "./src/app/shopping-list/shopping-list.service.ts");
+    /* harmony import */
+
+
+    var _shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./shopping-edit/shopping-edit.component */
     "./src/app/shopping-list/shopping-edit/shopping-edit.component.ts");
     /* harmony import */
 
 
-    var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! @angular/common */
     "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
     function ShoppingListComponent_a_5_Template(rf, ctx) {
       if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 4);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
 
@@ -1649,19 +1657,22 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }
 
     var ShoppingListComponent = /*#__PURE__*/function () {
-      function ShoppingListComponent() {
+      function ShoppingListComponent(shoppingListService) {
         _classCallCheck(this, ShoppingListComponent);
 
+        this.shoppingListService = shoppingListService;
         this.ingredients = [new _shared_models_ingredient_model__WEBPACK_IMPORTED_MODULE_1__["Ingredient"]('Bread Flour 5-lbs.', 2), new _shared_models_ingredient_model__WEBPACK_IMPORTED_MODULE_1__["Ingredient"]('24 pk water', 1)];
       }
 
       _createClass(ShoppingListComponent, [{
         key: "ngOnInit",
-        value: function ngOnInit() {}
-      }, {
-        key: "onIngredientAdded",
-        value: function onIngredientAdded(ingredient) {
-          this.ingredients.push(ingredient);
+        value: function ngOnInit() {
+          var _this2 = this;
+
+          this.ingredients = this.shoppingListService.getIngredients();
+          this.shoppingListService.ingredientsChanged.subscribe(function (ingredients) {
+            _this2.ingredients = ingredients;
+          });
         }
       }]);
 
@@ -1669,7 +1680,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }();
 
     ShoppingListComponent.ɵfac = function ShoppingListComponent_Factory(t) {
-      return new (t || ShoppingListComponent)();
+      return new (t || ShoppingListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_shopping_list_service__WEBPACK_IMPORTED_MODULE_2__["ShoppingListService"]));
     };
 
     ShoppingListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
@@ -1677,26 +1688,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-shopping-list"]],
       decls: 6,
       vars: 1,
-      consts: [[1, "row"], [1, "col-xs-10", "col-sm-10", "col-md-10", "col-lg-10"], [3, "ingredientAdded"], [1, "list-group"], ["class", "list-group-item", "style", "cursor: pointer;", 4, "ngFor", "ngForOf"], [1, "list-group-item", 2, "cursor", "pointer"]],
+      consts: [[1, "row"], [1, "col-xs-10", "col-sm-10", "col-md-10", "col-lg-10"], [1, "list-group"], ["class", "list-group-item", "style", "cursor: pointer;", 4, "ngFor", "ngForOf"], [1, "list-group-item", 2, "cursor", "pointer"]],
       template: function ShoppingListComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "app-shopping-edit", 2);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("ingredientAdded", function ShoppingListComponent_Template_app_shopping_edit_ingredientAdded_2_listener($event) {
-            return ctx.onIngredientAdded($event);
-          });
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "app-shopping-edit");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "hr");
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "ul", 3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "ul", 2);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, ShoppingListComponent_a_5_Template, 2, 2, "a", 4);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, ShoppingListComponent_a_5_Template, 2, 2, "a", 3);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1711,7 +1716,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.ingredients);
         }
       },
-      directives: [_shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_2__["ShoppingEditComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"]],
+      directives: [_shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_3__["ShoppingEditComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Nob3BwaW5nLWxpc3Qvc2hvcHBpbmctbGlzdC5jb21wb25lbnQuY3NzIn0= */"]
     });
     /*@__PURE__*/
@@ -1725,7 +1730,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           styleUrls: ['./shopping-list.component.css']
         }]
       }], function () {
-        return [];
+        return [{
+          type: _shopping_list_service__WEBPACK_IMPORTED_MODULE_2__["ShoppingListService"]
+        }];
       }, null);
     })();
     /***/
@@ -1751,10 +1758,42 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     __webpack_require__.d(__webpack_exports__, "ShoppingListService", function () {
       return ShoppingListService;
     });
+    /* harmony import */
 
-    var ShoppingListService = function ShoppingListService() {
-      _classCallCheck(this, ShoppingListService);
-    };
+
+    var _shared_models_ingredient_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! ../shared/models/ingredient.model */
+    "./src/app/shared/models/ingredient.model.ts");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+    var ShoppingListService = /*#__PURE__*/function () {
+      function ShoppingListService() {
+        _classCallCheck(this, ShoppingListService);
+
+        this.ingredientsChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
+        this.ingredients = [new _shared_models_ingredient_model__WEBPACK_IMPORTED_MODULE_0__["Ingredient"]('Bread Flour 5-lbs.', 2), new _shared_models_ingredient_model__WEBPACK_IMPORTED_MODULE_0__["Ingredient"]('24 pk water', 1)];
+      }
+
+      _createClass(ShoppingListService, [{
+        key: "getIngredients",
+        value: function getIngredients() {
+          return this.ingredients.slice();
+        }
+      }, {
+        key: "addIngredient",
+        value: function addIngredient(ingredient) {
+          this.ingredients.push(ingredient);
+          this.ingredientsChanged.emit(this.ingredients.slice());
+        }
+      }]);
+
+      return ShoppingListService;
+    }();
     /***/
 
   },
